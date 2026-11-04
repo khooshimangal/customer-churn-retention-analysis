@@ -1,0 +1,22 @@
+# Operating system files
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+notebooks/Untitled.ipynb
+
+# Anaconda temporary files
+anaconda_projects/
+
+# Project datasets
+data/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
