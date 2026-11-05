@@ -238,8 +238,8 @@ The following areas were investigated:
 4. Internet service churn.
 5. Monthly charges and customer churn.
 6. Online Security and Tech Support service combinations.
-7. Revenue contribution by contract type.
-8. Revenue contribution by customer tenure.
+7. Monthly billing exposure by contract type.
+8. Monthly billing exposure by customer tenure.
 9. Contract type and customer tenure segmentation.
 
 ## SQL Analysis
