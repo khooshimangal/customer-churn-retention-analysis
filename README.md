@@ -78,8 +78,8 @@ customer-churn-retention-analysis/
 │       ├── 01_churn_by_tenure.png
 │       ├── 02_churn_by_service_combination.png
 │       ├── 03_monthly_charges_by_churn.png
-│       ├── 04_revenue_contribution_by_contract.png
-│       └── 05_revenue_contribution_by_tenure.png
+│       ├── 04_monthly_billing_exposure_by_contract.png
+│       └── 05_monthly_billing_exposure_by_tenure.png
 │
 ├── .gitignore
 └── README.md
@@ -150,11 +150,11 @@ The following charts illustrate key patterns identified during the customer chur
 
 ### 4. Monthly Billing Exposure by Contract Type
 
-![Monthly billing exposure by contract type among churned customers](reports/figures/04_revenue_contribution_by_contract.png)
+![Monthly billing exposure by contract type among churned customers](reports/figures/04_monthly_billing_exposure_by_contract.png)
 
 ### 5. Monthly Billing Exposure by Customer Tenure
 
-![Monthly billing exposure by tenure among churned customers](reports/figures/05_revenue_contribution_by_tenure.png)
+![Monthly billing exposure by tenure among churned customers](reports/figures/05_monthly_billing_exposure_by_tenure.png)
 
 ## Key Business Findings
 
@@ -182,17 +182,20 @@ Customers paying above $70 per month have a churn rate of **35.36%**, compared w
 
 Among customers with internet service, those without Online Security and Tech Support have a churn rate of **48.96%**. Customers with both services have a churn rate of 9.01%.
 
-### 7. Revenue Exposure by Contract
+### 7. Monthly Billing Exposure by Contract
 
-Month-to-month customers account for **86.86%** of the combined monthly charges associated with customers who churned.
+Month-to-month customers account for **$120,847.10**, representing **86.86%** of the $139,130.85 in summed monthly charges associated with churned customers.
 
-### 8. Revenue Exposure by Tenure
+### 8. Monthly Billing Exposure by Tenure
 
-Customers in their first 12 months account for **49.56%** of monthly charges associated with customers who churned.
+Customers who churned within their first 12 months account for **$68,954.25**, representing **49.56%** of the $139,130.85 in summed monthly charges associated with churned customers.
 
 ### 9. Highest-Risk Customer Segment
 
 The combination of month-to-month contracts and 0–12 months of tenure has the highest observed churn rate at **51.35%**.
+
+
+**Interpretation note:** Monthly billing exposure represents the sum of monthly charges associated with customer records classified as churned. It provides a snapshot-based measure of billing value associated with customer attrition, rather than realised revenue loss or cumulative revenue foregone.
 
 ## Business Recommendations
 
