@@ -52,6 +52,134 @@ To reproduce the analysis, download the CSV from the source repository and place
 
 The Python notebook cleans the dataset and exports a processed version to `data/processed/` for SQL analysis.
 
+
+## Reproducing the Analysis
+
+### Tested Environment
+
+The project was developed and tested using:
+
+| Software | Version |
+|---|---|
+| Python | 3.13.9 |
+| Pandas | 2.3.3 |
+| Matplotlib | 3.10.6 |
+| Jupyter Notebook | 7.4.5 |
+| MySQL | 9.7.0 |
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/khooshimangal/customer-churn-retention-analysis.git
+
+cd customer-churn-retention-analysis
+```
+
+### 2. Set Up the Python Environment
+
+Create and activate a virtual environment:
+
+```bash
+python3 -m venv .venv
+
+source .venv/bin/activate
+```
+
+Install the required packages:
+
+```bash
+python -m pip install --upgrade pip
+
+pip install -r requirements.txt
+```
+
+### 3. Download the Dataset
+
+Create the raw data directory:
+
+```bash
+mkdir -p data/raw
+```
+
+Download the original dataset from IBM's public GitHub repository:
+
+```bash
+curl -L "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv" -o data/raw/Telco-Customer-Churn.csv
+```
+
+### 4. Run the Python Notebook
+
+Launch Jupyter Notebook from the project root:
+
+```bash
+jupyter notebook
+```
+
+Open:
+
+`notebooks/01_customer_churn_analysis.ipynb`
+
+Run the cells sequentially to perform data inspection, cleaning, exploratory analysis, visualisation and customer segmentation.
+
+The notebook exports the cleaned dataset to:
+
+`data/processed/telco_customer_churn_cleaned.csv`
+
+### 5. Set Up the MySQL Database
+
+Open MySQL Workbench and execute:
+
+```sql
+CREATE DATABASE IF NOT EXISTS customer_churn_analysis;
+
+USE customer_churn_analysis;
+```
+
+### Import the Cleaned Dataset
+
+Use MySQL Workbench's Table Data Import Wizard:
+
+1. Refresh the SCHEMAS panel.
+2. Right-click `customer_churn_analysis`.
+3. Select Table Data Import Wizard.
+4. Choose `data/processed/telco_customer_churn_cleaned.csv`.
+5. Set the destination schema to `customer_churn_analysis`.
+6. Set the destination table name to `telco_customer_churn`.
+7. Review the column mappings and data types before completing the import.
+
+Check the data types:
+
+- `SeniorCitizen` and `tenure`: INTEGER
+- `MonthlyCharges` and `TotalCharges`: numeric
+- `customerID`: TEXT or VARCHAR
+
+Verify the import:
+
+```sql
+SELECT COUNT(*) AS Total_Customers
+FROM telco_customer_churn;
+```
+
+Expected result: 7,043 records.
+
+### 6. Execute the SQL Analysis
+
+Open the SQL files in the `sql/` directory using MySQL Workbench.
+
+Execute the eight scripts in numerical order, from:
+
+`01_overall_churn_analysis.sql`
+
+through:
+
+`08_contract_tenure_churn_analysis.sql`
+
+These queries analyse overall churn, customer contracts, tenure, internet services, monthly charges, service combinations and customer segmentation.
+
+### Data Availability Note
+
+The raw and processed datasets are excluded from Git version control through `.gitignore`. Download the original dataset and generate the cleaned CSV by following the steps above before running the SQL analysis.
+
 ## Project Structure
 
 ```text
