@@ -131,6 +131,31 @@ SQL concepts used:
 
 Python and SQL results were cross-checked to ensure consistency.
 
+
+## Visualisations
+
+The following charts illustrate key patterns identified during the customer churn analysis.
+
+### 1. Customer Churn Rate by Tenure
+
+![Customer churn rate by tenure](reports/figures/01_churn_by_tenure.png)
+
+### 2. Churn by Online Security and Tech Support
+
+![Churn rate by online security and technical support](reports/figures/02_churn_by_service_combination.png)
+
+### 3. Monthly Charges by Churn Status
+
+![Total monthly charges by churn status](reports/figures/03_monthly_charges_by_churn.png)
+
+### 4. Monthly Billing Exposure by Contract Type
+
+![Monthly billing exposure by contract type among churned customers](reports/figures/04_revenue_contribution_by_contract.png)
+
+### 5. Monthly Billing Exposure by Customer Tenure
+
+![Monthly billing exposure by tenure among churned customers](reports/figures/05_revenue_contribution_by_tenure.png)
+
 ## Key Business Findings
 
 ### 1. Overall Customer Churn
