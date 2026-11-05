@@ -210,6 +210,7 @@ customer-churn-retention-analysis/
 │       └── 05_monthly_billing_exposure_by_tenure.png
 │
 ├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
