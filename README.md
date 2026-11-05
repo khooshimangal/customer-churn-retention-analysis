@@ -56,10 +56,9 @@ The Python notebook cleans the dataset and exports a processed version to `data/
 
 ```text
 customer-churn-retention-analysis/
-│
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── raw/                 # Original dataset (not tracked)
+│   └── processed/           # Cleaned dataset (not tracked)
 │
 ├── notebooks/
 │   └── 01_customer_churn_analysis.ipynb
@@ -76,6 +75,11 @@ customer-churn-retention-analysis/
 │
 ├── reports/
 │   └── figures/
+│       ├── 01_churn_by_tenure.png
+│       ├── 02_churn_by_service_combination.png
+│       ├── 03_monthly_charges_by_churn.png
+│       ├── 04_revenue_contribution_by_contract.png
+│       └── 05_revenue_contribution_by_tenure.png
 │
 ├── .gitignore
 └── README.md
